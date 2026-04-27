@@ -66,6 +66,8 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 | `NVIM_CORE_SETTINGS.md` | 핵심 설정값 요약 |
 | `INSTALL_WITH_LLM.md` | LLM 설치 가이드 |
 | `INSTALL_WITH_MCP.md` | MCP 설치 가이드 |
+| `ZSH_SETTINGS.md` | zsh 히스토리 검색과 터미널 보조 설정 |
+| `zshrc.cmux` | 실제로 source해서 쓰는 zsh 설정 |
 
 ## MCP 에이전트 작업 순서
 
@@ -79,7 +81,8 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 8. 시작 직후 현재 폴더와 Git status를 보여주는 `NvimStartupStatus` 창을 추가합니다.
 9. 한글 명령어 보정 테이블을 추가합니다.
 10. headless Neovim으로 설정 로드를 검증합니다.
-11. README에 실제 적용된 단축키와 동작을 반영합니다.
+11. 선택 사항으로 `zshrc.cmux`를 `~/.zshrc`에서 source하도록 안내합니다.
+12. README에 실제 적용된 단축키와 동작을 반영합니다.
 
 ## MCP 에이전트에게 줄 요청문
 

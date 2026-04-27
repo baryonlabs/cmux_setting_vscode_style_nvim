@@ -1,0 +1,76 @@
+# cmux-friendly zsh settings.
+# Add this to ~/.zshrc:
+# source /path/to/cmux_setting_vscode_style_nvim/zshrc.cmux
+
+# Let Ctrl+s reach terminal Neovim instead of freezing terminal output.
+stty -ixon 2>/dev/null || true
+
+# Shared, useful history for AI coding tools and project work.
+export HISTFILE="${HISTFILE:-$HOME/.zsh_history}"
+export HISTSIZE="${HISTSIZE:-50000}"
+export SAVEHIST="${SAVEHIST:-50000}"
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+
+# Make Up/Down search commands matching the text already typed.
+# Example: type "claude", press Up, and jump through previous "claude --..." commands.
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
+bindkey "^[OA" history-beginning-search-backward-end
+bindkey "^[OB" history-beginning-search-forward-end
+
+# If zsh-history-substring-search is installed, use substring matching instead.
+# macOS Homebrew:
+#   brew install zsh-history-substring-search
+for cmux_history_plugin in \
+  /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh \
+  /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh \
+  "$HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh"; do
+  if [[ -r "$cmux_history_plugin" ]]; then
+    source "$cmux_history_plugin"
+    bindkey "^[[A" history-substring-search-up
+    bindkey "^[[B" history-substring-search-down
+    bindkey "^[OA" history-substring-search-up
+    bindkey "^[OB" history-substring-search-down
+    break
+  fi
+done
+unset cmux_history_plugin
+
+# Optional ghost-text suggestions while typing.
+# macOS Homebrew:
+#   brew install zsh-autosuggestions
+for cmux_suggest_plugin in \
+  /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+  /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
+  "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"; do
+  if [[ -r "$cmux_suggest_plugin" ]]; then
+    source "$cmux_suggest_plugin"
+    break
+  fi
+done
+unset cmux_suggest_plugin
+
+# Optional command coloring.
+# macOS Homebrew:
+#   brew install zsh-syntax-highlighting
+for cmux_highlight_plugin in \
+  /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh \
+  "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"; do
+  if [[ -r "$cmux_highlight_plugin" ]]; then
+    source "$cmux_highlight_plugin"
+    break
+  fi
+done
+unset cmux_highlight_plugin

@@ -87,6 +87,7 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 - 파일 찾기는 Space ff, 전체 검색은 Space fg, 열린 파일 목록은 Space fb로 둔다.
 - 저장은 Ctrl+s, Space w, :w 모두 가능하게 한다.
 - Ctrl+s가 터미널 흐름 제어와 충돌할 수 있으므로 README에 stty -ixon 안내를 넣는다.
+- zshrc.cmux를 설치 옵션으로 안내하고, claude 입력 후 위/아래 방향키로 이전 claude 명령을 찾는 zsh-history-substring-search 설정을 포함한다.
 - LSP는 mason.nvim, mason-lspconfig.nvim, nvim-lspconfig를 사용한다.
 - 자동완성은 nvim-cmp를 사용한다.
 - 포맷은 conform.nvim을 사용하고 저장 시 자동 포맷한다.

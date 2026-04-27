@@ -44,7 +44,9 @@ require_file README.vi.md
 require_file NVIM_CORE_SETTINGS.md
 require_file INSTALL_WITH_LLM.md
 require_file INSTALL_WITH_MCP.md
+require_file ZSH_SETTINGS.md
 require_file init.lua
+require_file zshrc.cmux
 require_file init.ko.lua
 require_file init.en.lua
 require_file init.ja.lua
@@ -69,9 +71,12 @@ require_text README.vi.md "Thiết lập Neovim cho chỉnh sửa tệp trong cm
 require_text README.md "https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/"
 require_text README.ko.md "클립보드 이미지 붙여넣기"
 require_text README.ko.md "VSCode처럼 파일 저장, Neovim 포커스 복귀, 외부 파일 변경 이벤트"
+require_text README.ko.md "zsh 터미널 보조 설정"
 require_text NVIM_CORE_SETTINGS.md 'Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시 계산합니다.'
 require_text INSTALL_WITH_LLM.md "가장 쉬운 요청"
 require_text INSTALL_WITH_MCP.md "가장 쉬운 요청"
+require_text ZSH_SETTINGS.md "zsh-history-substring-search"
+require_text zshrc.cmux "history-substring-search-up"
 
 nvim --headless -u "$ROOT_DIR/init.lua" '+qa'
 pass "init.lua loads in headless Neovim"
