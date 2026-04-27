@@ -33,7 +33,8 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 git clone https://github.com/baryonlabs/cmux_setting_vscode_style_nvim.git
 cd cmux_setting_vscode_style_nvim
 mkdir -p ~/.config/nvim
-cp init.lua ~/.config/nvim/init.lua
+cp init.lua ~/.config/nvim/cmux-base.lua
+cp init.zh-CN.lua ~/.config/nvim/init.lua
 nvim
 ```
 
@@ -59,4 +60,3 @@ nvim
 ```bash
 tests/smoke.sh
 ```
-

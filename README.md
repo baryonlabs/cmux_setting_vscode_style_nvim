@@ -45,6 +45,14 @@ cp init.lua ~/.config/nvim/init.lua
 nvim
 ```
 
+To keep the English entrypoint explicit, install it this way:
+
+```bash
+cp init.lua ~/.config/nvim/cmux-base.lua
+cp init.en.lua ~/.config/nvim/init.lua
+nvim
+```
+
 Optional macOS tools:
 
 ```bash

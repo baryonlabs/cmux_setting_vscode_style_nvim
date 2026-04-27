@@ -33,18 +33,26 @@ cd cmux_setting_vscode_style_nvim
 
 그 뒤 MCP 에이전트에게 현재 폴더의 문서를 읽고 `init.lua`를 `~/.config/nvim/init.lua`로 적용하라고 요청합니다.
 
-언어별 진입 파일도 있습니다.
+언어별 진입 파일을 쓰려면 기본 설정을 `cmux-base.lua`로 복사하고, 선택한 언어 파일을 최종 `init.lua`로 복사해야 합니다.
 
 ```text
-init.ko.lua
-init.en.lua
-init.ja.lua
-init.zh-CN.lua
-init.zh-TW.lua
-init.vi.lua
+한국어: init.ko.lua
+English: init.en.lua
+日本語: init.ja.lua
+简体中文: init.zh-CN.lua
+繁體中文: init.zh-TW.lua
+Tiếng Việt: init.vi.lua
 ```
 
-실제 설정은 `init.lua`를 기준으로 유지하고, 언어별 파일은 선택 언어를 표시한 뒤 `init.lua`를 불러오는 wrapper입니다.
+예:
+
+```sh
+mkdir -p ~/.config/nvim
+cp init.lua ~/.config/nvim/cmux-base.lua
+cp init.ko.lua ~/.config/nvim/init.lua
+```
+
+실제 설정은 `cmux-base.lua`를 기준으로 로드되고, 언어별 파일은 선택 언어를 표시한 뒤 `cmux-base.lua`를 불러오는 wrapper입니다.
 
 ## 목표
 

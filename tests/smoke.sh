@@ -91,6 +91,23 @@ for entrypoint in init.ko.lua init.en.lua init.ja.lua init.zh-CN.lua init.zh-TW.
   pass "$entrypoint loads"
 done
 
+tmp_nvim_dir="$(mktemp -d)"
+cleanup() {
+  rm -rf "$tmp_nvim_dir"
+}
+trap cleanup EXIT
+
+cp "$ROOT_DIR/init.lua" "$tmp_nvim_dir/cmux-base.lua"
+cp "$ROOT_DIR/init.en.lua" "$tmp_nvim_dir/init.lua"
+nvim --headless -u "$tmp_nvim_dir/init.lua" '+lua assert(vim.g.cmux_nvim_lang == "en", "language wrapper install failed")' '+qa'
+pass "language wrapper install layout loads"
+
+rm "$tmp_nvim_dir/cmux-base.lua"
+wrapper_error_log="$tmp_nvim_dir/wrapper-error.log"
+nvim --headless -u "$tmp_nvim_dir/init.lua" '+qa' >"$wrapper_error_log" 2>&1 || true
+grep -Fq "cmux-base.lua is required" "$wrapper_error_log" || fail "language wrapper error message missing"
+pass "language wrapper without base fails clearly"
+
 nvim --headless -u "$ROOT_DIR/init.lua" \
   '+lua assert(vim.g.mkdp_port == "8755", "mkdp_port"); assert(vim.g.mkdp_auto_start == 0, "mkdp_auto_start"); assert(vim.g.mkdp_auto_close == 0, "mkdp_auto_close")' \
   '+qa'

@@ -34,20 +34,21 @@ mkdir -p ~/.config/nvim
 cp init.lua ~/.config/nvim/init.lua
 ```
 
-언어별 진입 파일을 쓰고 싶으면 다음 중 하나를 복사할 수 있습니다.
+언어별 진입 파일을 쓰고 싶으면 기본 설정을 `cmux-base.lua`로 두고, 선택한 언어 파일을 최종 `init.lua`로 복사합니다.
 
 ```text
-init.ko.lua
-init.en.lua
-init.ja.lua
-init.zh-CN.lua
-init.zh-TW.lua
-init.vi.lua
+한국어: init.ko.lua
+English: init.en.lua
+日本語: init.ja.lua
+简体中文: init.zh-CN.lua
+繁體中文: init.zh-TW.lua
+Tiếng Việt: init.vi.lua
 ```
 
 예:
 
 ```sh
+cp init.lua ~/.config/nvim/cmux-base.lua
 cp init.en.lua ~/.config/nvim/init.lua
 ```
 
