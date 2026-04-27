@@ -1,4 +1,4 @@
-<h1 align="center">cmux Neovim File Editing Setup</h1>
+<h1 align="center">Neovim File Editing Setup for cmux</h1>
 <p align="center">A VSCode-style Neovim setup for cmux users, with Korean input support</p>
 
 <p align="center">
