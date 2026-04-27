@@ -2,6 +2,37 @@
 
 이 문서는 MCP(Model Context Protocol)를 사용할 수 있는 에이전트가 파일 시스템 도구로 이 Neovim 설정을 설치할 때 따르는 절차입니다.
 
+## 가장 쉬운 요청
+
+MCP 파일 시스템 도구를 가진 에이전트에게 아래처럼 저장소 URL만 주고 설치를 요청하면 됩니다.
+
+```text
+아래 GitHub 저장소를 읽고 README.md와 NVIM_CORE_SETTINGS.md를 기준으로
+내 ~/.config/nvim/init.lua에 Neovim 설정을 설치해줘.
+
+기존 ~/.config/nvim/init.lua가 있으면 먼저 백업하고,
+설치 후 headless Neovim 검증까지 실행해줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
+```
+
+설명만 원할 때:
+
+```text
+아래 GitHub 저장소를 읽고 MCP로 설치할 때 어떤 파일을 어디에 쓰는지 설명해줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
+```
+
+## 직접 clone해서 MCP로 적용할 때
+
+```sh
+git clone https://github.com/baryonlabs/cmux_setting_vscode_style_nvim.git
+cd cmux_setting_vscode_style_nvim
+```
+
+그 뒤 MCP 에이전트에게 현재 폴더의 문서를 읽고 `init.lua`를 `~/.config/nvim/init.lua`로 적용하라고 요청합니다.
+
 ## 목표
 
 MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
@@ -31,7 +62,10 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 ## MCP 에이전트에게 줄 요청문
 
 ```text
-MCP filesystem 도구를 사용해서 현재 폴더의 Neovim 설정 문서를 읽고, ~/.config/nvim/init.lua에 설정을 적용해줘.
+MCP filesystem 도구를 사용해서 아래 저장소 또는 현재 clone된 폴더의 Neovim 설정 문서를 읽고,
+~/.config/nvim/init.lua에 설정을 적용해줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 
 반드시 지킬 것:
 - 기존 사용자 변경사항을 함부로 삭제하지 말 것.

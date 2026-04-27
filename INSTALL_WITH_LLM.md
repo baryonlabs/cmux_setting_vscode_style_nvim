@@ -2,19 +2,60 @@
 
 이 문서는 ChatGPT, Claude, Codex 같은 LLM 코딩 도구에게 이 Neovim 설정을 설치시키기 위한 가이드입니다.
 
+## 가장 쉬운 요청
+
+LLM에게 아래처럼 저장소 URL만 주고 설치 또는 설명을 요청하면 됩니다.
+
+```text
+아래 GitHub 저장소를 읽고 내 macOS에 이 Neovim 설정을 설치해줘.
+설치 전에 README와 NVIM_CORE_SETTINGS.md를 먼저 요약해서 설명하고,
+기존 ~/.config/nvim/init.lua가 있으면 백업한 뒤 적용해줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
+```
+
+설명만 듣고 싶을 때:
+
+```text
+아래 GitHub 저장소의 Neovim 설정을 초보자도 이해하기 쉽게 설명해줘.
+VSCode 사용자가 어떤 단축키로 적응하면 되는지 중심으로 알려줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
+```
+
+## 직접 설치할 때
+
+저장소를 직접 clone해서 설치하려면 다음 흐름을 사용합니다.
+
+```sh
+git clone https://github.com/baryonlabs/cmux_setting_vscode_style_nvim.git
+cd cmux_setting_vscode_style_nvim
+mkdir -p ~/.config/nvim
+cp init.lua ~/.config/nvim/init.lua
+```
+
+그 다음 Neovim을 실행합니다.
+
+```sh
+nvim
+```
+
 ## 전제
 
 - 대상 OS: macOS 기준
 - Neovim 설정 파일: `~/.config/nvim/init.lua`
-- 설명 문서 위치: 현재 폴더의 `README.md`
-- 핵심 설정 요약: 현재 폴더의 `NVIM_CORE_SETTINGS.md`
+- 설정 저장소: `https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/`
+- 설명 문서: `README.md`
+- 핵심 설정 요약: `NVIM_CORE_SETTINGS.md`
 
-## LLM에게 줄 요청문
+## 상세 커스터마이징 요청문
 
-아래 내용을 그대로 LLM에게 전달하면 됩니다.
+저장소 내용을 기준으로 세부 조건까지 명확히 주고 싶으면 아래 내용을 LLM에게 전달합니다.
 
 ```text
-내 macOS에 초보자와 VSCode 사용자 친화적인 Neovim 설정을 설치해줘.
+아래 저장소를 기준으로 내 macOS에 초보자와 VSCode 사용자 친화적인 Neovim 설정을 설치해줘.
+
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 
 요구사항:
 - 실제 설정 파일은 ~/.config/nvim/init.lua 로 만든다.

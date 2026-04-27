@@ -62,6 +62,12 @@ INSTALL_WITH_LLM.md
 INSTALL_WITH_MCP.md
 ```
 
+LLM이나 MCP 에이전트에게는 저장소 URL만 주고 설치 또는 설명을 요청해도 됩니다.
+
+```text
+https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
+```
+
 ## 스크린샷
 
 | 미리보기 + 파일 탐색기 |
