@@ -15,6 +15,8 @@
   <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
 </p>
 
+<a href="https://cmux.com/">cmux</a> は、複数の AI コーディングエージェントを実行して調整するマルチエージェント型コーディングワークスペースです。
+
 cmux でプロジェクトのファイル編集と管理を一か所で行うための Neovim 設定です。VSCode から移行しやすいように、ファイルエクスプローラー、検索、コマンドパレット、Markdown プレビュー、LSP、フォーマット、Git 表示、マウス操作を重視しています。
 
 ## LLM でインストール

@@ -15,6 +15,8 @@
   <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
 </p>
 
+<a href="https://cmux.com/">cmux</a> 是一个用于运行和协调多个 AI 编码代理的多代理编码工作区。
+
 这是一个面向 cmux 的 Neovim 配置，用于在同一个工具里完成文件编辑和项目管理。它针对 VSCode 用户设计，包含文件浏览器、快速搜索、命令面板、Markdown 预览、LSP、格式化、Git 状态、鼠标友好提示等功能。
 
 ## 让 LLM 安装

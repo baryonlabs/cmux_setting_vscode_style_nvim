@@ -15,6 +15,8 @@
   <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
 </p>
 
+<a href="https://cmux.com/">cmux</a> is a multi-agent coding workspace for running and coordinating AI coding agents.
+
 This repository contains a cmux-friendly Neovim setup for editing and managing project files in one place. It is designed for people coming from VSCode: file explorer, quick file search, project search, command palette, Markdown preview, LSP, formatting, Git indicators, mouse-friendly tips, and Korean input safeguards.
 
 ## Quick Install With an LLM

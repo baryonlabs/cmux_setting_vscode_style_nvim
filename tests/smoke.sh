@@ -58,6 +58,7 @@ require_file screenshots/tips-window.svg
 require_file screenshots/command-palette.svg
 
 require_text README.md "Neovim File Editing Setup for cmux"
+require_text README.md "https://cmux.com/"
 require_text README.md '<a href="README.ko.md">한국어</a>'
 require_text README.ko.md "cmux Neovim 파일 편집/관리 세팅"
 require_text README.ko.md '<a href="README.md">English</a>'

@@ -15,6 +15,8 @@
   <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
 </p>
 
+<a href="https://cmux.com/">cmux</a>는 여러 AI 코딩 에이전트를 실행하고 조율하는 멀티 에이전트 코딩 워크스페이스입니다.
+
 cmux를 사용할 때 파일 편집과 관리를 한 번에 처리하기 위한 Neovim 도구 세팅입니다.
 VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성했습니다.
 파일 탐색, 빠른 파일 찾기, 프로젝트 검색, 자동완성, LSP, 포맷, Git 변경 표시, 한글 사용자 보완을 포함합니다.

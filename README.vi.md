@@ -15,6 +15,8 @@
   <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
 </p>
 
+<a href="https://cmux.com/">cmux</a> là workspace lập trình đa tác nhân để chạy và điều phối nhiều AI coding agent.
+
 Đây là cấu hình Neovim thân thiện với cmux để chỉnh sửa và quản lý tệp trong cùng một nơi. Nó được thiết kế cho người quen dùng VSCode: trình duyệt tệp, tìm tệp nhanh, tìm kiếm toàn dự án, command palette, xem trước Markdown, LSP, format, trạng thái Git và gợi ý dùng chuột.
 
 ## Cài đặt bằng LLM
