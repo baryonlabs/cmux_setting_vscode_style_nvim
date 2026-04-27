@@ -61,9 +61,13 @@ INSTALL_WITH_MCP.md
 
 ## 스크린샷
 
-| 시작 상태 | 상황별 TIP | 명령 팔레트 |
-| --- | --- | --- |
-| ![시작 상태](screenshots/startup-status.svg) | ![상황별 TIP](screenshots/tips-window.svg) | ![명령 팔레트](screenshots/command-palette.svg) |
+| 파일 탐색기 | 시작 상태 |
+| --- | --- |
+| ![파일 탐색기](screenshots/file-explorer.svg) | ![시작 상태](screenshots/startup-status.svg) |
+
+| 상황별 TIP | 명령 팔레트 |
+| --- | --- |
+| ![상황별 TIP](screenshots/tips-window.svg) | ![명령 팔레트](screenshots/command-palette.svg) |
 
 ## 주요 기능
 

@@ -1,0 +1,39 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#111827"/>
+  <rect x="0" y="0" width="1200" height="32" fill="#1f2937"/>
+  <text x="18" y="22" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">nvim README.md</text>
+
+  <rect x="0" y="32" width="330" height="688" fill="#0b1220" stroke="#374151"/>
+  <rect x="0" y="32" width="330" height="38" fill="#111827"/>
+  <text x="18" y="57" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700">Neo-tree filesystem</text>
+
+  <text x="18" y="104" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="17">▾ cmux_setting_vscode_style_nvim</text>
+  <text x="38" y="138" fill="#fcd34d" font-family="Menlo, Consolas, monospace" font-size="16">▾ screenshots</text>
+  <text x="62" y="170" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">command-palette.svg</text>
+  <text x="62" y="198" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">file-explorer.svg</text>
+  <text x="62" y="226" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">startup-status.svg</text>
+  <text x="62" y="254" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">tips-window.svg</text>
+
+  <text x="38" y="298" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">INSTALL_WITH_LLM.md</text>
+  <text x="38" y="326" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">INSTALL_WITH_MCP.md</text>
+  <text x="38" y="354" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">NVIM_CORE_SETTINGS.md</text>
+  <rect x="30" y="370" width="270" height="28" rx="4" fill="#1f2937"/>
+  <text x="38" y="390" fill="#86efac" font-family="Menlo, Consolas, monospace" font-size="16">README.md</text>
+  <text x="38" y="424" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">init.lua</text>
+
+  <rect x="330" y="32" width="870" height="688" fill="#111827"/>
+  <text x="370" y="86" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700"># Neovim 설정 안내</text>
+  <text x="370" y="132" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="17">VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성한 개인 설정입니다.</text>
+  <text x="370" y="188" fill="#93c5fd" font-family="Menlo, Consolas, monospace" font-size="19">## 특히 강조한 점</text>
+  <text x="370" y="232" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">파일 탐색기    Ctrl+b로 VSCode 사이드바처럼 열고 닫습니다.</text>
+  <text x="370" y="264" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">마우스 사용    상태바 TIP, 우클릭 메뉴, 팁 창 클릭을 지원합니다.</text>
+  <text x="370" y="296" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">한글 입력 보정 :ㅂ, :ㅈ, :ㅈㅂ 입력을 보정합니다.</text>
+
+  <rect x="0" y="720" width="1200" height="40" fill="#1f2937"/>
+  <rect x="0" y="720" width="96" height="40" fill="#2563eb"/>
+  <text x="22" y="746" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700">NORMAL</text>
+  <text x="120" y="746" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">README.md</text>
+  <rect x="1018" y="720" width="80" height="40" fill="#374151"/>
+  <text x="1038" y="746" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700">TIP</text>
+  <text x="1122" y="746" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">42%</text>
+</svg>
