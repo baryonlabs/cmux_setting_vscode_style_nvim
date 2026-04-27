@@ -100,7 +100,7 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 - Neovim 시작 직후 현재 폴더와 Git status를 보여주는 시작 상태 창을 띄운다.
 - 시작 상태 창은 q, Esc, ㅂ으로 닫히고 :NvimStartupStatus로 다시 열 수 있게 한다.
 - 한글 입력 상태에서 :ㅂ, :ㅈ, :ㅈㅂ 같은 명령어를 :q, :w, :wq로 보정한다.
-- README.md에는 VSCode와 비교, 주요 단축키, Markdown preview, 한글 사용자 팁, 상황별 사용 팁을 한국어로 설명한다.
+- README.md는 영어 기본 문서로 유지하고, README.ko.md에는 VSCode와 비교, 주요 단축키, Markdown preview, 한글 사용자 팁, 상황별 사용 팁을 한국어로 설명한다.
 
 설치 후 다음을 확인해줘:
 - nvim --headless ~/.config/nvim/init.lua '+qa'

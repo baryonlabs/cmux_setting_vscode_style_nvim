@@ -53,7 +53,8 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 | 파일 | 설명 |
 | --- | --- |
 | `~/.config/nvim/init.lua` | 실제 Neovim 설정 |
-| `README.md` | 사용자용 한국어 안내 |
+| `README.md` | English 안내 |
+| `README.ko.md` | 한국어 안내 |
 | `NVIM_CORE_SETTINGS.md` | 핵심 설정값 요약 |
 | `INSTALL_WITH_LLM.md` | LLM 설치 가이드 |
 | `INSTALL_WITH_MCP.md` | MCP 설치 가이드 |

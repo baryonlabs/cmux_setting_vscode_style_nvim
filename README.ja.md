@@ -2,7 +2,7 @@
 <p align="center">cmux ユーザー向けの VSCode 風 Neovim 設定</p>
 
 <p align="center">
-  <a href="README.md">한국어</a> | <a href="README.en.md">English</a> | 日本語 | <a href="README.zh-CN.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.vi.md">Tiếng Việt</a>
+  <a href="README.ko.md">한국어</a> | <a href="README.md">English</a> | 日本語 | <a href="README.zh-CN.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.vi.md">Tiếng Việt</a>
 </p>
 
 <p align="center">

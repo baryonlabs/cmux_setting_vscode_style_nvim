@@ -36,7 +36,7 @@ require_cmd nvim
 require_cmd git
 
 require_file README.md
-require_file README.en.md
+require_file README.ko.md
 require_file README.ja.md
 require_file README.zh-CN.md
 require_file README.zh-TW.md
@@ -57,17 +57,17 @@ require_file screenshots/startup-status.svg
 require_file screenshots/tips-window.svg
 require_file screenshots/command-palette.svg
 
-require_text README.md "cmux Neovim 파일 편집/관리 세팅"
-require_text README.md '<a href="README.en.md">English</a>'
-require_text README.en.md "cmux Neovim File Editing Setup"
-require_text README.en.md '<a href="README.md">한국어</a>'
+require_text README.md "cmux Neovim File Editing Setup"
+require_text README.md '<a href="README.ko.md">한국어</a>'
+require_text README.ko.md "cmux Neovim 파일 편집/관리 세팅"
+require_text README.ko.md '<a href="README.md">English</a>'
 require_text README.ja.md "cmux Neovim ファイル編集セットアップ"
 require_text README.zh-CN.md "cmux Neovim 文件编辑配置"
 require_text README.zh-TW.md "cmux Neovim 檔案編輯設定"
 require_text README.vi.md "Thiết lập Neovim cho chỉnh sửa tệp trong cmux"
 require_text README.md "https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/"
-require_text README.md "클립보드 이미지 붙여넣기"
-require_text README.md "VSCode처럼 파일 저장, Neovim 포커스 복귀, 외부 파일 변경 이벤트"
+require_text README.ko.md "클립보드 이미지 붙여넣기"
+require_text README.ko.md "VSCode처럼 파일 저장, Neovim 포커스 복귀, 외부 파일 변경 이벤트"
 require_text NVIM_CORE_SETTINGS.md 'Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시 계산합니다.'
 require_text INSTALL_WITH_LLM.md "가장 쉬운 요청"
 require_text INSTALL_WITH_MCP.md "가장 쉬운 요청"
@@ -78,8 +78,8 @@ pass "init.lua loads in headless Neovim"
 nvim --headless -u "$ROOT_DIR/init.lua" README.md '+qa'
 pass "README.md opens with init.lua"
 
-nvim --headless -u "$ROOT_DIR/init.lua" README.en.md '+qa'
-pass "README.en.md opens with init.lua"
+nvim --headless -u "$ROOT_DIR/init.lua" README.ko.md '+qa'
+pass "README.ko.md opens with init.lua"
 
 for readme in README.ja.md README.zh-CN.md README.zh-TW.md README.vi.md; do
   nvim --headless -u "$ROOT_DIR/init.lua" "$readme" '+qa'
