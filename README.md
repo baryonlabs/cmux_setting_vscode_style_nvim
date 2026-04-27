@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
 <p align="center">
@@ -59,7 +60,7 @@ nvim
 Optional macOS tools:
 
 ```bash
-brew install pngpaste macism
+brew install macism
 ```
 
 Optional zsh helpers are documented separately in [docs/ZSH_SETTINGS.md](docs/ZSH_SETTINGS.md).
@@ -91,17 +92,18 @@ Use <code>Space mp</code> or the right-click menu. Preview runs on fixed port <c
 Use the mouse to focus panes and resize Neovim windows in the terminal.
 </td>
 <td width="60%">
-<img src="screenshots/tips-window.svg" alt="TIP window" width="100%" />
+<img src="screenshots/mouse-window-resize.svg" alt="Mouse window resizing" width="100%" />
 </td>
 </tr>
 </table>
+
+Contributions are welcome. This project is released under the [MIT License](LICENSE).
 
 ## Key Bindings
 
 | Action | Key |
 | --- | --- |
 | Toggle file explorer | `Ctrl+b`, `Ctrl+n`, `Space e` |
-| Command palette | `Space p`, `Ctrl+Shift+P` |
 | Find files | `Space ff` |
 | Search project | `Space fg` |
 | Open buffers | `Space fb` |

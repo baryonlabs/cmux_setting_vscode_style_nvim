@@ -98,7 +98,7 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 - Markdown preview 포트는 8755로 고정할 것.
 - Markdown preview는 자동 시작하지 말 것.
 - 우클릭 기본 메뉴에 Markdown 미리보기 항목을 추가하고 MarkdownPreviewToggle에 연결할 것.
-- 클립보드 이미지를 저장할 수 있도록 `pngpaste`, `:PasteClipboardImage`, Neo-tree `I` 단축키를 문서화할 것.
+- 클립보드 이미지 저장은 아직 검증 전 기능이므로 핵심 설치 요구사항에는 넣지 말 것.
 - 상태바 오른쪽에 TIP을 표시하고 클릭/hover로 상황별 팁 창을 열 것.
 - Space p와 Ctrl+Shift+P로 Telescope commands 명령 팔레트를 열 것.
 - 시작 직후 현재 폴더와 Git status가 보이게 할 것.
@@ -132,8 +132,6 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 | [ ] | Markdown preview `mkdp_port = "8755"` 확인 |
 | [ ] | Markdown preview `mkdp_auto_start = 0` 확인 |
 | [ ] | 우클릭 메뉴 `Markdown 미리보기` 확인 |
-| [ ] | 클립보드 이미지 저장 `:PasteClipboardImage` 확인 |
-| [ ] | Neo-tree 이미지 저장 키 `I` 확인 |
 | [ ] | Markdown Treesitter start guard 확인 |
 | [ ] | 상태바 `TIP` 표시 확인 |
 | [ ] | `NvimTipsKo` 명령 확인 |

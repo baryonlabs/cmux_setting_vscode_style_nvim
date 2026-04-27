@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
 <p align="center">
@@ -48,10 +49,12 @@ VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성했습니다.
 터미널 Neovim 안에서 마우스로 창을 선택하고 분할 창 크기를 조절할 수 있습니다.
 </td>
 <td width="60%">
-<img src="screenshots/tips-window.svg" alt="TIP window" width="100%" />
+<img src="screenshots/mouse-window-resize.svg" alt="Mouse window resizing" width="100%" />
 </td>
 </tr>
 </table>
+
+기여를 환영합니다. 이 프로젝트는 [MIT License](LICENSE)로 공개합니다.
 
 ## 특히 강조한 점
 
@@ -63,7 +66,6 @@ VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성했습니다.
 | 마우스 사용 | 창 선택과 분할 창 크기 조절을 마우스로 할 수 있고, 우클릭 메뉴도 지원합니다. |
 | 한글 입력 보정 | 한글 입력 상태에서 `:ㅂ`, `:ㅈ`, `:ㅈㅂ`처럼 입력해도 `:q`, `:w`, `:wq`로 실행됩니다. |
 | Markdown 미리보기 | `Space mp` 또는 우클릭 메뉴 `Markdown 미리보기`로 브라우저 preview를 열고 닫습니다. |
-| 클립보드 이미지 저장 | 파일 탐색기에서 폴더를 고른 뒤 `I` 또는 우클릭 메뉴로 이미지를 PNG로 저장합니다. |
 
 ## 다국어 README
 
@@ -147,7 +149,6 @@ nvim
 | 팁 닫기             | `q`, `Esc`, `ㅂ`                               |
 | 시작 상태 창        | 시작하자마자 현재 폴더와 Git 상태 표시         |
 | Markdown preview    | 포트 `8755`, 자동 시작 꺼짐                    |
-| 클립보드 이미지     | `pngpaste`, `:PasteClipboardImage`, Neo-tree `I` |
 | 한글 입력 보정      | `:ㅂ` -> `:q`, `:ㅈ` -> `:w`, `:ㅈㅂ` -> `:wq` |
 | Markdown Treesitter | Markdown만 Treesitter 시작 차단                |
 
@@ -228,7 +229,6 @@ Esc    입력 종료 / Normal mode로 돌아가기
 | 상태바 `TIP`       | 마우스를 올리거나 클릭해서 상황별 팁 열기 |
 | 마우스 우클릭 메뉴 | `상황별 팁` 항목으로 팁 열기              |
 | 마우스 우클릭 메뉴 | `Markdown 미리보기` 항목으로 preview 토글 |
-| 마우스 우클릭 메뉴 | `클립보드 이미지 저장` 항목으로 PNG 저장  |
 | `Ctrl+b`           | VSCode처럼 파일 탐색기 열기/닫기          |
 | `Ctrl+n`           | 파일 탐색기 열기/닫기                     |
 | `Space e`          | 파일 탐색기 열기/닫기                     |
@@ -242,7 +242,6 @@ Esc    입력 종료 / Normal mode로 돌아가기
 | `Space mp`         | Markdown 미리보기 열기/닫기               |
 | `Space mo`         | Markdown 미리보기 열기                    |
 | `Space mc`         | Markdown 미리보기 닫기                    |
-| Neo-tree `I`       | 선택한 폴더에 클립보드 이미지 저장        |
 | `Ctrl+s`           | 저장                                      |
 | `Space w`          | 저장                                      |
 | `Space q`          | 현재 창 닫기                              |
@@ -422,30 +421,10 @@ pcall(vim.treesitter.stop, args.buf)
 이 때문에 `:Lazy`에서 `markdown-preview.nvim`에 local changes가 있다고 보일 수 있습니다.
 업데이트로 패치가 사라지면 `/1` 새로고침 404 문제가 다시 생길 수 있습니다.
 
-## 클립보드 이미지 붙여넣기
+## 예정 기능
 
-macOS 클립보드에 이미지가 있을 때 파일 탐색기에서 저장할 폴더를 선택하고 PNG 파일로 저장할 수 있습니다.
-
-필요 도구:
-
-```sh
-brew install pngpaste
-```
-
-사용 방법:
-
-| 상황 | 방법 |
-| --- | --- |
-| Neo-tree에서 폴더 선택 후 저장 | `I` |
-| 우클릭 메뉴로 저장 | `클립보드 이미지 저장` |
-| 명령으로 저장 | `:PasteClipboardImage` |
-| 특정 폴더에 저장 | `:PasteClipboardImage ~/Pictures` |
-
-동작 방식:
-
-- 폴더를 선택하면 그 폴더 안에 저장합니다.
-- 파일을 선택하면 그 파일이 있는 폴더에 저장합니다.
-- 파일명은 기본으로 `image-YYYYMMDD-HHMMSS.png`가 제안됩니다.
+클립보드 이미지 붙여넣기는 아직 테스트가 충분하지 않아 핵심 기능 문서에서는 제외했습니다.
+검증이 끝난 뒤 별도 PR/변경으로 다시 올릴 예정입니다.
 - 클립보드에 이미지가 없으면 저장하지 않고 안내 메시지를 표시합니다.
 
 ## TODO

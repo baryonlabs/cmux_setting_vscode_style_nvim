@@ -95,7 +95,7 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 - Markdown preview는 자동 시작하지 않는다.
 - Markdown preview 포트는 8755로 고정한다.
 - 우클릭 기본 메뉴에 Markdown 미리보기 항목을 추가하고 MarkdownPreviewToggle에 연결한다.
-- 클립보드 이미지를 저장할 수 있도록 pngpaste 기반 :PasteClipboardImage 명령과 Neo-tree I 단축키를 추가한다.
+- 클립보드 이미지 저장은 아직 검증 전 기능이므로 핵심 설치 요구사항에는 넣지 않는다.
 - Neovim 0.12.2 Markdown Treesitter range 오류를 피하기 위해 Markdown Treesitter 시작을 막는다.
 - 상태바 오른쪽에 TIP을 표시하고 클릭/마우스오버 시 상황별 한글 팁 창을 연다.
 - 팁 창은 q, Esc, ㅂ으로 닫히게 한다.

@@ -41,6 +41,7 @@ require_file README.ja.md
 require_file README.zh-CN.md
 require_file README.zh-TW.md
 require_file README.vi.md
+require_file LICENSE
 require_file NVIM_CORE_SETTINGS.md
 require_file INSTALL_WITH_LLM.md
 require_file INSTALL_WITH_MCP.md
@@ -54,9 +55,8 @@ require_file init.zh-CN.lua
 require_file init.zh-TW.lua
 require_file init.vi.lua
 require_file screenshots/file-explorer.png
+require_file screenshots/mouse-window-resize.svg
 require_file screenshots/preview-and-file-explorer.png
-require_file screenshots/startup-status.svg
-require_file screenshots/tips-window.svg
 
 require_text README.md "Neovim File Editing Setup for cmux"
 require_text README.md "https://cmux.com/"
@@ -67,8 +67,14 @@ require_text README.ja.md "cmux Neovim ファイル編集セットアップ"
 require_text README.zh-CN.md "cmux Neovim 文件编辑配置"
 require_text README.zh-TW.md "cmux Neovim 檔案編輯設定"
 require_text README.vi.md "Thiết lập Neovim cho chỉnh sửa tệp trong cmux"
+require_text README.md "MIT License"
+require_text LICENSE "MIT License"
+require_text README.ja.md "screenshots/mouse-window-resize.svg"
+require_text README.zh-CN.md "screenshots/mouse-window-resize.svg"
+require_text README.zh-TW.md "screenshots/mouse-window-resize.svg"
+require_text README.vi.md "screenshots/mouse-window-resize.svg"
 require_text README.md "https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/"
-require_text README.ko.md "클립보드 이미지 붙여넣기"
+require_text README.ko.md "예정 기능"
 require_text README.ko.md "VSCode처럼 파일 저장, Neovim 포커스 복귀, 외부 파일 변경 이벤트"
 require_text README.ko.md "docs/ZSH_SETTINGS.md"
 require_text NVIM_CORE_SETTINGS.md 'Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시 계산합니다.'
@@ -124,12 +130,12 @@ nvim --headless -u "$ROOT_DIR/init.lua" \
 pass "core normal-mode mappings exist"
 
 nvim --headless -u "$ROOT_DIR/init.lua" \
-  '+lua for _, command in ipairs({ "NvimTipsKo", "NvimStartupStatus", "PasteClipboardImage", "Folder", "Dir" }) do assert(vim.fn.exists(":" .. command) == 2, command .. " missing") end' \
+  '+lua for _, command in ipairs({ "NvimTipsKo", "NvimStartupStatus", "Folder", "Dir" }) do assert(vim.fn.exists(":" .. command) == 2, command .. " missing") end' \
   '+qa'
 pass "custom commands exist"
 
 nvim --headless -u "$ROOT_DIR/init.lua" \
-  '+lua local menu = vim.api.nvim_exec2("menu PopUp", { output = true }).output; assert(menu:find("상황별 팁", 1, true), "tips menu missing"); assert(menu:find("Markdown 미리보기", 1, true), "markdown menu missing"); assert(menu:find("클립보드 이미지 저장", 1, true), "image menu missing")' \
+  '+lua local menu = vim.api.nvim_exec2("menu PopUp", { output = true }).output; assert(menu:find("상황별 팁", 1, true), "tips menu missing"); assert(menu:find("Markdown 미리보기", 1, true), "markdown menu missing")' \
   '+qa'
 pass "popup menu entries exist"
 

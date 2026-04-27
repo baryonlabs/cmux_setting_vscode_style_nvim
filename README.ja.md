@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
 <p align="center">
@@ -17,7 +18,7 @@
 
 <a href="https://cmux.com/">cmux</a> は、複数の AI コーディングエージェントを実行して調整するマルチエージェント型コーディングワークスペースです。
 
-cmux でプロジェクトのファイル編集と管理を一か所で行うための Neovim 設定です。VSCode から移行しやすいように、ファイルエクスプローラー、検索、コマンドパレット、Markdown プレビュー、LSP、フォーマット、Git 表示、マウス操作を重視しています。
+cmux でプロジェクトのファイル編集と管理を一か所で行うための Neovim 設定です。VSCode から移行しやすいように、ファイルエクスプローラー、検索、Markdown プレビュー、LSP、フォーマット、Git 表示、マウスでのウィンドウサイズ調整を重視しています。
 
 ## LLM でインストール
 
@@ -40,22 +41,51 @@ cp init.ja.lua ~/.config/nvim/init.lua
 nvim
 ```
 
-## 主な機能
+## 機能
+
+<table>
+<tr>
+<td width="40%" valign="middle">
+<h3>VSCode 風ファイルエクスプローラー</h3>
+<code>Ctrl+b</code> で Neo-tree を開閉します。Neo-tree 内でも同じキーで閉じられます。
+</td>
+<td width="60%">
+<img src="screenshots/file-explorer.png" alt="Neo-tree file explorer" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Markdown プレビュー</h3>
+<code>Space mp</code> または右クリックメニューでブラウザ preview を開きます。ポートは <code>8755</code> 固定です。
+</td>
+<td width="60%">
+<img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>マウスでウィンドウサイズ調整</h3>
+ターミナル上の Neovim で、マウスを使ってペインを選択し、分割ウィンドウのサイズを調整できます。
+</td>
+<td width="60%">
+<img src="screenshots/mouse-window-resize.svg" alt="Mouse window resizing" width="100%" />
+</td>
+</tr>
+</table>
+
+Contributions are welcome. This project is released under the [MIT License](LICENSE).
+
+## キーバインド
 
 | 機能 | キー |
 | --- | --- |
 | ファイルエクスプローラー | `Ctrl+b`, `Ctrl+n`, `Space e` |
-| コマンドパレット | `Space p`, `Ctrl+Shift+P` |
 | ファイル検索 | `Space ff` |
 | 全体検索 | `Space fg` |
 | 保存 | `Ctrl+s`, `Space w`, `:w` |
 | ウィンドウを閉じる | `Ctrl+w`, `Space q`, `:q` |
 | Markdown プレビュー | `Space mp`, 右クリックメニュー |
 | ヒント | ステータスライン `TIP`, `Space t` |
-
-## スクリーンショット
-
-![Preview and file explorer](screenshots/preview-and-file-explorer.png)
 
 ## テスト
 

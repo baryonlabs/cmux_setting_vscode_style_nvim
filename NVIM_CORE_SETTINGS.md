@@ -51,7 +51,6 @@
 | 상황별 팁 | 상태바 `TIP`, `Space t` |
 | 한글 도움말 | `Space ?` |
 | 시작 상태 | 자동 표시, `:NvimStartupStatus` |
-| 클립보드 이미지 | Neo-tree `I`, `:PasteClipboardImage`, 우클릭 메뉴 |
 
 ## Markdown 미리보기
 
@@ -68,24 +67,10 @@ Markdown preview는 두 방식으로 엽니다.
 - `Space mp`
 - 우클릭 메뉴 `Markdown 미리보기`
 
-## 클립보드 이미지 저장
+## 예정 기능
 
-macOS 클립보드 이미지를 PNG 파일로 저장합니다.
-
-필요 도구:
-
-```sh
-brew install pngpaste
-```
-
-사용 방법:
-
-| 위치 | 동작 |
-| --- | --- |
-| Neo-tree `I` | 선택한 폴더 또는 파일 위치에 이미지 저장 |
-| `:PasteClipboardImage` | 현재 작업 폴더에 이미지 저장 |
-| `:PasteClipboardImage ~/Pictures` | 지정 폴더에 이미지 저장 |
-| 우클릭 메뉴 `클립보드 이미지 저장` | 현재 위치 기준으로 이미지 저장 |
+클립보드 이미지 저장은 아직 테스트가 충분하지 않아 핵심 설정값에서 제외합니다.
+검증 후 별도 PR/변경으로 문서화합니다.
 
 ## Markdown Treesitter 충돌 회피
 

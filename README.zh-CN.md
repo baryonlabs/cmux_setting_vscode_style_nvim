@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
 <p align="center">
@@ -17,7 +18,7 @@
 
 <a href="https://cmux.com/">cmux</a> 是一个用于运行和协调多个 AI 编码代理的多代理编码工作区。
 
-这是一个面向 cmux 的 Neovim 配置，用于在同一个工具里完成文件编辑和项目管理。它针对 VSCode 用户设计，包含文件浏览器、快速搜索、命令面板、Markdown 预览、LSP、格式化、Git 状态、鼠标友好提示等功能。
+这是一个面向 cmux 的 Neovim 配置，用于在同一个工具里完成文件编辑和项目管理。它针对 VSCode 用户设计，包含文件浏览器、快速搜索、Markdown 预览、LSP、格式化、Git 状态、鼠标调整窗口大小等功能。
 
 ## 让 LLM 安装
 
@@ -40,22 +41,51 @@ cp init.zh-CN.lua ~/.config/nvim/init.lua
 nvim
 ```
 
+## 功能
+
+<table>
+<tr>
+<td width="40%" valign="middle">
+<h3>VSCode 风格文件浏览器</h3>
+使用 <code>Ctrl+b</code> 打开和关闭 Neo-tree。在 Neo-tree 内也可以用同一个键关闭。
+</td>
+<td width="60%">
+<img src="screenshots/file-explorer.png" alt="Neo-tree file explorer" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Markdown 预览</h3>
+使用 <code>Space mp</code> 或右键菜单打开浏览器预览。预览端口固定为 <code>8755</code>。
+</td>
+<td width="60%">
+<img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>用鼠标调整窗口大小</h3>
+在终端 Neovim 里可以用鼠标选择窗格，并调整分屏窗口大小。
+</td>
+<td width="60%">
+<img src="screenshots/mouse-window-resize.svg" alt="Mouse window resizing" width="100%" />
+</td>
+</tr>
+</table>
+
+欢迎贡献。本项目基于 [MIT License](LICENSE) 发布。
+
 ## 常用快捷键
 
 | 功能 | 快捷键 |
 | --- | --- |
 | 文件浏览器 | `Ctrl+b`, `Ctrl+n`, `Space e` |
-| 命令面板 | `Space p`, `Ctrl+Shift+P` |
 | 查找文件 | `Space ff` |
 | 全局搜索 | `Space fg` |
 | 保存 | `Ctrl+s`, `Space w`, `:w` |
 | 关闭窗口 | `Ctrl+w`, `Space q`, `:q` |
 | Markdown 预览 | `Space mp`, 右键菜单 |
 | 使用提示 | 状态栏 `TIP`, `Space t` |
-
-## 截图
-
-![Preview and file explorer](screenshots/preview-and-file-explorer.png)
 
 ## 测试
 
