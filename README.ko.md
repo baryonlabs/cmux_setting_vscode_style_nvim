@@ -1,4 +1,4 @@
-<h1 align="center">cmux Neovim 파일 편집/관리 세팅</h1>
+<h1 align="center">cmux를 위한 Neovim 파일 편집 세팅</h1>
 <p align="center">VSCode 사용자와 한글 사용자를 위한 cmux 친화 Neovim 설정</p>
 
 <p align="center">
