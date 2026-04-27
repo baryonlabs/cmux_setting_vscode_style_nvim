@@ -63,6 +63,10 @@ INSTALL_WITH_MCP.md
 
 ## 스크린샷
 
+| 미리보기 + 파일 탐색기 |
+| --- |
+| ![미리보기와 파일 탐색기](screenshots/preview-and-file-explorer.png) |
+
 | 파일 탐색기 | 시작 상태 |
 | --- | --- |
 | ![파일 탐색기](screenshots/file-explorer.svg) | ![시작 상태](screenshots/startup-status.svg) |
