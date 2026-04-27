@@ -914,9 +914,7 @@ local function get_git_status_lines()
   return lines
 end
 
-local function show_startup_status()
-  close_startup_status()
-
+local function get_startup_status_lines()
   local cwd = vim.fn.getcwd()
   local lines = {
     "시작 상태",
@@ -929,9 +927,33 @@ local function show_startup_status()
   vim.list_extend(lines, {
     "",
     "Ctrl+b 파일 탐색기  Space p 명령 팔레트  Space t 팁",
-    "q / Esc / ㅂ 으로 닫기",
+    "r 새로고침  q / Esc / ㅂ 닫기",
   })
 
+  return lines
+end
+
+local function render_startup_status()
+  if not startup_state.buf or not vim.api.nvim_buf_is_valid(startup_state.buf) then
+    return
+  end
+
+  local lines = get_startup_status_lines()
+  vim.bo[startup_state.buf].modifiable = true
+  vim.api.nvim_buf_set_lines(startup_state.buf, 0, -1, false, lines)
+  vim.bo[startup_state.buf].modifiable = false
+end
+
+local function refresh_startup_status()
+  if startup_window_is_valid() then
+    render_startup_status()
+  end
+end
+
+local function show_startup_status()
+  close_startup_status()
+
+  local lines = get_startup_status_lines()
   local width = 0
   for _, line in ipairs(lines) do
     width = math.max(width, vim.fn.strdisplaywidth(line))
@@ -955,6 +977,8 @@ local function show_startup_status()
   for _, key in ipairs({ "q", "<Esc>", "ㅂ" }) do
     vim.keymap.set("n", key, close_startup_status, { buffer = startup_state.buf, nowait = true, desc = "시작 상태 닫기" })
   end
+
+  vim.keymap.set("n", "r", refresh_startup_status, { buffer = startup_state.buf, nowait = true, desc = "시작 상태 새로고침" })
 end
 
 vim.keymap.set("n", "q", function()
@@ -988,5 +1012,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
         show_startup_status()
       end
     end)
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePost", "FocusGained", "FileChangedShellPost" }, {
+  callback = function()
+    vim.defer_fn(refresh_startup_status, 200)
   end,
 })

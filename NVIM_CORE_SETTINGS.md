@@ -132,7 +132,8 @@ Neovim 시작 직후 현재 폴더와 Git 상태를 표시합니다.
 | Git status | `git status --short` |
 
 Git 저장소가 아니면 `Git: 저장소 아님`으로 표시합니다.
-시작 상태 창은 `q`, `Esc`, `ㅂ`으로 닫습니다.
+Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시 계산합니다.
+시작 상태 창은 `q`, `Esc`, `ㅂ`으로 닫고 `r`로 새로고침합니다.
 다시 보려면 `:NvimStartupStatus`를 실행합니다.
 
 ## 터미널 Ctrl+s 주의
