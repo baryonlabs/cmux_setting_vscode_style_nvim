@@ -783,6 +783,8 @@ end, { desc = "한글 상황별 Neovim 사용 팁" })
 
 vim.cmd([[silent! aunmenu PopUp.상황별\ 팁<Tab>Space\ t]])
 vim.cmd([[anoremenu <silent> 499.10 PopUp.상황별\ 팁<Tab>Space\ t :NvimTipsKo<CR>]])
+vim.cmd([[silent! aunmenu PopUp.Markdown\ 미리보기<Tab>Space\ mp]])
+vim.cmd([[anoremenu <silent> 499.20 PopUp.Markdown\ 미리보기<Tab>Space\ mp :MarkdownPreviewToggle<CR>]])
 
 local last_tip_hover = 0
 vim.keymap.set("n", "<MouseMove>", function()
@@ -807,6 +809,18 @@ local startup_state = {
 
 local function startup_window_is_valid()
   return startup_state.win and vim.api.nvim_win_is_valid(startup_state.win)
+end
+
+local function close_startup_status()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].filetype == "nvim-startup-status" then
+      pcall(vim.api.nvim_win_close, win, true)
+    end
+  end
+
+  startup_state.win = nil
+  startup_state.buf = nil
 end
 
 local function get_git_status_lines()
@@ -843,6 +857,8 @@ local function get_git_status_lines()
 end
 
 local function show_startup_status()
+  close_startup_status()
+
   local cwd = vim.fn.getcwd()
   local lines = {
     "시작 상태",
@@ -865,6 +881,7 @@ local function show_startup_status()
 
   startup_state.buf = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_buf_set_lines(startup_state.buf, 0, -1, false, lines)
+  vim.bo[startup_state.buf].filetype = "nvim-startup-status"
   vim.bo[startup_state.buf].modifiable = false
 
   startup_state.win = vim.api.nvim_open_win(startup_state.buf, true, {
@@ -877,16 +894,32 @@ local function show_startup_status()
     border = "rounded",
   })
 
-  local function close_startup_status()
-    if startup_window_is_valid() then
-      vim.api.nvim_win_close(startup_state.win, true)
-    end
-  end
-
   for _, key in ipairs({ "q", "<Esc>", "ㅂ" }) do
     vim.keymap.set("n", key, close_startup_status, { buffer = startup_state.buf, nowait = true, desc = "시작 상태 닫기" })
   end
 end
+
+vim.keymap.set("n", "q", function()
+  if startup_window_is_valid() then
+    close_startup_status()
+    return ""
+  end
+  return "q"
+end, { expr = true, desc = "시작 상태 닫기 또는 q" })
+
+vim.keymap.set("n", "ㅂ", function()
+  if startup_window_is_valid() then
+    close_startup_status()
+  end
+end, { desc = "시작 상태 닫기" })
+
+vim.keymap.set("n", "<Esc>", function()
+  if startup_window_is_valid() then
+    close_startup_status()
+  else
+    vim.cmd("nohlsearch")
+  end
+end, { desc = "시작 상태 닫기 또는 검색 강조 지우기" })
 
 vim.api.nvim_create_user_command("NvimStartupStatus", show_startup_status, { desc = "현재 폴더와 Git 상태 보기" })
 
