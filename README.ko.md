@@ -140,7 +140,7 @@ nvim
 | `NVIM_CORE_SETTINGS.md` | 핵심 설정값 요약                                 |
 | `INSTALL_WITH_LLM.md`   | LLM에게 설치를 맡길 때 쓰는 프롬프트와 검증 절차 |
 | `INSTALL_WITH_MCP.md`   | MCP 파일 시스템 도구로 설치할 때 쓰는 작업 절차  |
-| `ZSH_SETTINGS.md`       | zsh 히스토리 검색, `Ctrl+s`, Claude/Codex 터미널 사용 보조 |
+| `docs/ZSH_SETTINGS.md`  | zsh 히스토리 검색, `Ctrl+s`, Claude/Codex 터미널 사용 보조 |
 
 ## 핵심 설정값 요약
 
@@ -691,45 +691,7 @@ VSCode의 Command Palette는 `Space p`입니다.
 
 한글 입력 상태에서 실수로 `:ㅈ`, `:ㅂ!`처럼 입력해도 저장/닫기 명령으로 보정됩니다.
 
-터미널에서 `Ctrl+s`가 안 먹으면 터미널의 흐름 제어가 먼저 잡고 있을 수 있습니다.
-그 경우 셸에서 다음을 한 번 실행합니다.
-
-```sh
-stty -ixon
-```
-
-계속 적용하려면 `~/.zshrc`에 넣습니다.
-
-## zsh 터미널 보조 설정
-
-이 저장소에는 Neovim과 Claude/Codex 같은 AI 코딩 도구를 터미널에서 편하게 쓰기 위한 `zshrc.cmux`도 포함되어 있습니다.
-
-추천 플러그인:
-
-```sh
-brew install zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlighting
-```
-
-`~/.zshrc`에 추가:
-
-```sh
-source "$HOME/dev/cmux_setting_vscode_style_nvim/zshrc.cmux"
-```
-
-그 뒤 새 터미널을 열거나 다음을 실행합니다.
-
-```sh
-source ~/.zshrc
-```
-
-핵심 동작:
-
-| 상황 | 동작 |
-| --- | --- |
-| `claude` 입력 후 위/아래 방향키 | 예전에 실행한 `claude --...` 명령만 찾아서 이동 |
-| `Ctrl+s` | 터미널 Neovim에서 저장 키로 전달 |
-| 명령 입력 중 | 설치되어 있으면 회색 자동 제안 표시 |
-| 잘못된 명령/정상 명령 | 설치되어 있으면 syntax highlighting 표시 |
+터미널별 `Ctrl+s` 보정이나 Claude/Codex용 zsh 히스토리 검색은 필수 설정이 아니므로 [docs/ZSH_SETTINGS.md](docs/ZSH_SETTINGS.md)에 따로 정리했습니다.
 
 ### 여러 파일을 오갈 때
 

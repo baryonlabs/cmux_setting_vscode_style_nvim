@@ -1,6 +1,6 @@
 # cmux-friendly zsh settings.
 # Add this to ~/.zshrc:
-# source /path/to/cmux_setting_vscode_style_nvim/zshrc.cmux
+# source /path/to/cmux_setting_vscode_style_nvim/docs/zshrc.cmux
 
 # Let Ctrl+s reach terminal Neovim instead of freezing terminal output.
 stty -ixon 2>/dev/null || true

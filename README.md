@@ -36,7 +36,7 @@ For details, see:
 - [INSTALL_WITH_LLM.md](INSTALL_WITH_LLM.md)
 - [INSTALL_WITH_MCP.md](INSTALL_WITH_MCP.md)
 - [NVIM_CORE_SETTINGS.md](NVIM_CORE_SETTINGS.md)
-- [ZSH_SETTINGS.md](ZSH_SETTINGS.md)
+- [docs/ZSH_SETTINGS.md](docs/ZSH_SETTINGS.md)
 
 ## Manual Install
 
@@ -59,22 +59,10 @@ nvim
 Optional macOS tools:
 
 ```bash
-brew install pngpaste macism zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlighting
+brew install pngpaste macism
 ```
 
-Optional zsh setup:
-
-```bash
-source "$HOME/dev/cmux_setting_vscode_style_nvim/zshrc.cmux"
-```
-
-The zsh setup lets you type `claude`, press Up/Down, and jump through previous `claude --...` commands.
-
-If `Ctrl+s` does not save in your terminal:
-
-```bash
-stty -ixon
-```
+Optional zsh helpers are documented separately in [docs/ZSH_SETTINGS.md](docs/ZSH_SETTINGS.md).
 
 ## Features
 

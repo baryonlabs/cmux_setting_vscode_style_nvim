@@ -1,6 +1,6 @@
 # zsh settings for cmux
 
-This repository includes `zshrc.cmux`, an optional shell setup for people who use Neovim, cmux, Claude, Codex, and other AI coding tools from the terminal.
+This repository includes `docs/zshrc.cmux`, an optional shell setup for people who use Neovim, cmux, Claude, Codex, and other AI coding tools from the terminal.
 
 ## What it adds
 
@@ -23,7 +23,7 @@ cd cmux_setting_vscode_style_nvim
 Add this line to `~/.zshrc`:
 
 ```sh
-source "$HOME/dev/cmux_setting_vscode_style_nvim/zshrc.cmux"
+source "$HOME/dev/cmux_setting_vscode_style_nvim/docs/zshrc.cmux"
 ```
 
 Use the actual clone path if the repository is not under `$HOME/dev`.
@@ -48,7 +48,7 @@ Then reload:
 source ~/.zshrc
 ```
 
-`zshrc.cmux` works without these plugins, but `zsh-history-substring-search` gives the best behavior for commands like:
+`docs/zshrc.cmux` works without these plugins, but `zsh-history-substring-search` gives the best behavior for commands like:
 
 ```sh
 claude --dangerously-skip-permissions
@@ -60,7 +60,7 @@ Type `claude`, press Up, and zsh will show matching previous commands instead of
 
 ## 한국어 요약
 
-`zshrc.cmux`는 터미널에서 cmux, Neovim, Claude, Codex를 함께 쓸 때 편하게 쓰기 위한 zsh 설정입니다.
+`docs/zshrc.cmux`는 터미널에서 cmux, Neovim, Claude, Codex를 함께 쓸 때 편하게 쓰기 위한 zsh 설정입니다.
 
 가장 중요한 기능은 `claude`라고 입력한 뒤 위/아래 방향키를 누르면 예전에 실행했던 `claude --...` 명령만 찾아서 보여주는 것입니다.
 
@@ -73,7 +73,7 @@ brew install zsh-history-substring-search zsh-autosuggestions zsh-syntax-highlig
 `~/.zshrc`에 추가:
 
 ```sh
-source "$HOME/dev/cmux_setting_vscode_style_nvim/zshrc.cmux"
+source "$HOME/dev/cmux_setting_vscode_style_nvim/docs/zshrc.cmux"
 ```
 
 그 뒤:

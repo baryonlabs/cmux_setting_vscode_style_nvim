@@ -139,12 +139,5 @@ Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시
 ## 터미널 Ctrl+s 주의
 
 `Ctrl+s`는 저장으로 매핑되어 있습니다.
-다만 일부 터미널은 `Ctrl+s`를 화면 출력 정지(XOFF)로 먼저 처리합니다.
-
-안 먹으면 셸에서 다음을 실행합니다.
-
-```sh
-stty -ixon
-```
-
-계속 적용하려면 `~/.zshrc`에 추가합니다.
+다만 일부 터미널은 `Ctrl+s`를 화면 출력 정지(XOFF)로 먼저 처리할 수 있습니다.
+이 보정은 필수 설정이 아니므로 `docs/ZSH_SETTINGS.md`에 선택 설정으로 따로 정리합니다.

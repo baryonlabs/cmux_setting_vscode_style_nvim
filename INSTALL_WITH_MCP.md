@@ -66,8 +66,8 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 | `NVIM_CORE_SETTINGS.md` | 핵심 설정값 요약 |
 | `INSTALL_WITH_LLM.md` | LLM 설치 가이드 |
 | `INSTALL_WITH_MCP.md` | MCP 설치 가이드 |
-| `ZSH_SETTINGS.md` | zsh 히스토리 검색과 터미널 보조 설정 |
-| `zshrc.cmux` | 실제로 source해서 쓰는 zsh 설정 |
+| `docs/ZSH_SETTINGS.md` | zsh 히스토리 검색과 터미널 보조 설정 |
+| `docs/zshrc.cmux` | 실제로 source해서 쓰는 zsh 설정 |
 
 ## MCP 에이전트 작업 순서
 
@@ -81,7 +81,7 @@ MCP 에이전트가 다음 파일을 만들거나 갱신합니다.
 8. 시작 직후 현재 폴더와 Git status를 보여주는 `NvimStartupStatus` 창을 추가합니다.
 9. 한글 명령어 보정 테이블을 추가합니다.
 10. headless Neovim으로 설정 로드를 검증합니다.
-11. 선택 사항으로 `zshrc.cmux`를 `~/.zshrc`에서 source하도록 안내합니다.
+11. 선택 사항으로 `docs/zshrc.cmux`를 `~/.zshrc`에서 source하도록 안내합니다.
 12. README에 실제 적용된 단축키와 동작을 반영합니다.
 
 ## MCP 에이전트에게 줄 요청문
@@ -104,7 +104,7 @@ https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/
 - 시작 직후 현재 폴더와 Git status가 보이게 할 것.
 - `:NvimStartupStatus`로 시작 상태 창을 다시 열 수 있게 할 것.
 - Ctrl+s, Space w, :w를 저장으로 사용할 수 있게 할 것.
-- Ctrl+s가 터미널 흐름 제어와 충돌할 수 있으므로 README에 `stty -ixon` 안내를 넣을 것.
+- Ctrl+s가 터미널 흐름 제어와 충돌할 수 있으므로 `docs/ZSH_SETTINGS.md`의 선택 설정으로 안내할 것.
 - 팁 창은 q, Esc, ㅂ으로 닫을 것.
 - 우클릭 기본 메뉴는 없애지 말고 PopUp 메뉴에 상황별 팁 항목만 추가할 것.
 - Neovim 0.12.2 Markdown Treesitter range 오류를 막을 것.
