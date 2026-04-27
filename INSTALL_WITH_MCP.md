@@ -33,6 +33,19 @@ cd cmux_setting_vscode_style_nvim
 
 그 뒤 MCP 에이전트에게 현재 폴더의 문서를 읽고 `init.lua`를 `~/.config/nvim/init.lua`로 적용하라고 요청합니다.
 
+언어별 진입 파일도 있습니다.
+
+```text
+init.ko.lua
+init.en.lua
+init.ja.lua
+init.zh-CN.lua
+init.zh-TW.lua
+init.vi.lua
+```
+
+실제 설정은 `init.lua`를 기준으로 유지하고, 언어별 파일은 선택 언어를 표시한 뒤 `init.lua`를 불러오는 wrapper입니다.
+
 ## 목표
 
 MCP 에이전트가 다음 파일을 만들거나 갱신합니다.

@@ -2,7 +2,7 @@
 <p align="center">A VSCode-style Neovim setup for cmux users, with Korean input support</p>
 
 <p align="center">
-  <a href="README.md">한국어</a> | English
+  <a href="README.md">한국어</a> | English | <a href="README.ja.md">日本語</a> | <a href="README.zh-CN.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.vi.md">Tiếng Việt</a>
 </p>
 
 <p align="center">
@@ -133,4 +133,3 @@ tests/smoke.sh
 ```
 
 The smoke test checks core files, Neovim config loading, key mappings, custom commands, popup menu entries, Markdown preview settings, and startup status refresh.
-

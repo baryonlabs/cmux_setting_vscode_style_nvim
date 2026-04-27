@@ -34,6 +34,23 @@ mkdir -p ~/.config/nvim
 cp init.lua ~/.config/nvim/init.lua
 ```
 
+언어별 진입 파일을 쓰고 싶으면 다음 중 하나를 복사할 수 있습니다.
+
+```text
+init.ko.lua
+init.en.lua
+init.ja.lua
+init.zh-CN.lua
+init.zh-TW.lua
+init.vi.lua
+```
+
+예:
+
+```sh
+cp init.en.lua ~/.config/nvim/init.lua
+```
+
 그 다음 Neovim을 실행합니다.
 
 ```sh

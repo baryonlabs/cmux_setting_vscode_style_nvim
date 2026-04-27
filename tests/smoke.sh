@@ -37,10 +37,20 @@ require_cmd git
 
 require_file README.md
 require_file README.en.md
+require_file README.ja.md
+require_file README.zh-CN.md
+require_file README.zh-TW.md
+require_file README.vi.md
 require_file NVIM_CORE_SETTINGS.md
 require_file INSTALL_WITH_LLM.md
 require_file INSTALL_WITH_MCP.md
 require_file init.lua
+require_file init.ko.lua
+require_file init.en.lua
+require_file init.ja.lua
+require_file init.zh-CN.lua
+require_file init.zh-TW.lua
+require_file init.vi.lua
 require_file screenshots/file-explorer.svg
 require_file screenshots/preview-and-file-explorer.png
 require_file screenshots/startup-status.svg
@@ -51,6 +61,10 @@ require_text README.md "cmux Neovim 파일 편집/관리 세팅"
 require_text README.md '<a href="README.en.md">English</a>'
 require_text README.en.md "cmux Neovim File Editing Setup"
 require_text README.en.md '<a href="README.md">한국어</a>'
+require_text README.ja.md "cmux Neovim ファイル編集セットアップ"
+require_text README.zh-CN.md "cmux Neovim 文件编辑配置"
+require_text README.zh-TW.md "cmux Neovim 檔案編輯設定"
+require_text README.vi.md "Thiết lập Neovim cho chỉnh sửa tệp trong cmux"
 require_text README.md "https://github.com/baryonlabs/cmux_setting_vscode_style_nvim/"
 require_text README.md "클립보드 이미지 붙여넣기"
 require_text README.md "VSCode처럼 파일 저장, Neovim 포커스 복귀, 외부 파일 변경 이벤트"
@@ -66,6 +80,16 @@ pass "README.md opens with init.lua"
 
 nvim --headless -u "$ROOT_DIR/init.lua" README.en.md '+qa'
 pass "README.en.md opens with init.lua"
+
+for readme in README.ja.md README.zh-CN.md README.zh-TW.md README.vi.md; do
+  nvim --headless -u "$ROOT_DIR/init.lua" "$readme" '+qa'
+  pass "$readme opens with init.lua"
+done
+
+for entrypoint in init.ko.lua init.en.lua init.ja.lua init.zh-CN.lua init.zh-TW.lua init.vi.lua; do
+  nvim --headless -u "$ROOT_DIR/$entrypoint" '+lua assert(vim.g.cmux_nvim_lang ~= nil, "missing cmux_nvim_lang")' '+qa'
+  pass "$entrypoint loads"
+done
 
 nvim --headless -u "$ROOT_DIR/init.lua" \
   '+lua assert(vim.g.mkdp_port == "8755", "mkdp_port"); assert(vim.g.mkdp_auto_start == 0, "mkdp_auto_start"); assert(vim.g.mkdp_auto_close == 0, "mkdp_auto_close")' \
