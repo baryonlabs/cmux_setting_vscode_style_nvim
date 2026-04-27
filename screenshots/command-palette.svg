@@ -1,0 +1,18 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#111827"/>
+  <rect x="0" y="0" width="1200" height="32" fill="#1f2937"/>
+  <text x="18" y="22" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="15">nvim README.md</text>
+  <rect x="250" y="82" width="700" height="430" rx="8" fill="#0b1220" stroke="#6b7280"/>
+  <rect x="272" y="108" width="656" height="44" rx="6" fill="#111827" stroke="#374151"/>
+  <text x="292" y="137" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="18">Commands &gt; MarkdownPreview</text>
+  <text x="292" y="192" fill="#86efac" font-family="Menlo, Consolas, monospace" font-size="18">MarkdownPreview</text>
+  <text x="292" y="226" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="18">MarkdownPreviewStop</text>
+  <text x="292" y="260" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="18">MarkdownPreviewToggle</text>
+  <text x="292" y="294" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="18">NvimStartupStatus</text>
+  <text x="292" y="328" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="18">NvimTipsKo</text>
+  <text x="292" y="386" fill="#9ca3af" font-family="Menlo, Consolas, monospace" font-size="15">Space p 또는 Ctrl+Shift+P 로 열기</text>
+  <rect x="0" y="720" width="1200" height="40" fill="#1f2937"/>
+  <rect x="1018" y="720" width="80" height="40" fill="#374151"/>
+  <text x="1038" y="746" fill="#f9fafb" font-family="Menlo, Consolas, monospace" font-size="16" font-weight="700">TIP</text>
+  <text x="28" y="746" fill="#d1d5db" font-family="Menlo, Consolas, monospace" font-size="16">README.md</text>
+</svg>
