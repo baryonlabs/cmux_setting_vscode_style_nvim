@@ -53,11 +53,10 @@ require_file init.ja.lua
 require_file init.zh-CN.lua
 require_file init.zh-TW.lua
 require_file init.vi.lua
-require_file screenshots/file-explorer.svg
+require_file screenshots/file-explorer.png
 require_file screenshots/preview-and-file-explorer.png
 require_file screenshots/startup-status.svg
 require_file screenshots/tips-window.svg
-require_file screenshots/command-palette.svg
 
 require_text README.md "Neovim File Editing Setup for cmux"
 require_text README.md "https://cmux.com/"

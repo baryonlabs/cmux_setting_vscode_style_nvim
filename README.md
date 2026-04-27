@@ -17,7 +17,7 @@
 
 <a href="https://cmux.com/">cmux</a> is a multi-agent coding workspace for running and coordinating AI coding agents.
 
-This repository contains a cmux-friendly Neovim setup for editing and managing project files in one place. It is designed for people coming from VSCode: file explorer, quick file search, project search, command palette, Markdown preview, LSP, formatting, Git indicators, mouse-friendly tips, and Korean input safeguards.
+This repository contains a cmux-friendly Neovim setup for editing and managing project files in one place. It is designed for people coming from VSCode: file explorer, quick file search, project search, Markdown preview, LSP, formatting, Git indicators, mouse-friendly window resizing, and Korean input safeguards.
 
 ## Quick Install With an LLM
 
@@ -73,7 +73,7 @@ Optional zsh helpers are documented separately in [docs/ZSH_SETTINGS.md](docs/ZS
 Use <code>Ctrl+b</code> to open and close Neo-tree. It also closes from inside Neo-tree.
 </td>
 <td width="60%">
-<img src="screenshots/file-explorer.svg" alt="Neo-tree file explorer" width="100%" />
+<img src="screenshots/file-explorer.png" alt="Neo-tree file explorer" width="100%" />
 </td>
 </tr>
 <tr>
@@ -87,20 +87,11 @@ Use <code>Space mp</code> or the right-click menu. Preview runs on fixed port <c
 </tr>
 <tr>
 <td width="40%" valign="middle">
-<h3>Mouse-friendly tips</h3>
-Click or hover the statusline <code>TIP</code> area to open Korean usage tips.
+<h3>Mouse-friendly window resizing</h3>
+Use the mouse to focus panes and resize Neovim windows in the terminal.
 </td>
 <td width="60%">
 <img src="screenshots/tips-window.svg" alt="TIP window" width="100%" />
-</td>
-</tr>
-<tr>
-<td width="40%" valign="middle">
-<h3>Command palette</h3>
-Use <code>Space p</code> as a VSCode-style command palette powered by Telescope.
-</td>
-<td width="60%">
-<img src="screenshots/command-palette.svg" alt="Command palette" width="100%" />
 </td>
 </tr>
 </table>
