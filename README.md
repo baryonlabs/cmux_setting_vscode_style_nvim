@@ -14,6 +14,7 @@ VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성한 개인 설
 | 한글 입력 보정 | 한글 입력 상태에서 `:ㅂ`, `:ㅈ`, `:ㅈㅂ`처럼 입력해도 `:q`, `:w`, `:wq`로 실행됩니다. |
 | 명령 팔레트 | VSCode Command Palette처럼 `Space p`로 명령을 검색해서 실행합니다. |
 | Markdown 미리보기 | `Space mp` 또는 우클릭 메뉴 `Markdown 미리보기`로 브라우저 preview를 열고 닫습니다. |
+| 클립보드 이미지 저장 | 파일 탐색기에서 폴더를 고른 뒤 `I` 또는 우클릭 메뉴로 이미지를 PNG로 저장합니다. |
 
 ## 구성 파일
 
@@ -49,6 +50,7 @@ VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성한 개인 설
 | 팁 닫기             | `q`, `Esc`, `ㅂ`                               |
 | 시작 상태 창        | 시작하자마자 현재 폴더와 Git 상태 표시         |
 | Markdown preview    | 포트 `8755`, 자동 시작 꺼짐                    |
+| 클립보드 이미지     | `pngpaste`, `:PasteClipboardImage`, Neo-tree `I` |
 | 한글 입력 보정      | `:ㅂ` -> `:q`, `:ㅈ` -> `:w`, `:ㅈㅂ` -> `:wq` |
 | Markdown Treesitter | Markdown만 Treesitter 시작 차단                |
 
@@ -133,6 +135,7 @@ Esc    입력 종료 / Normal mode로 돌아가기
 | 상태바 `TIP`       | 마우스를 올리거나 클릭해서 상황별 팁 열기 |
 | 마우스 우클릭 메뉴 | `상황별 팁` 항목으로 팁 열기              |
 | 마우스 우클릭 메뉴 | `Markdown 미리보기` 항목으로 preview 토글 |
+| 마우스 우클릭 메뉴 | `클립보드 이미지 저장` 항목으로 PNG 저장  |
 | `Ctrl+b`           | VSCode처럼 파일 탐색기 열기/닫기          |
 | `Ctrl+n`           | 파일 탐색기 열기/닫기                     |
 | `Space e`          | 파일 탐색기 열기/닫기                     |
@@ -146,6 +149,7 @@ Esc    입력 종료 / Normal mode로 돌아가기
 | `Space mp`         | Markdown 미리보기 열기/닫기               |
 | `Space mo`         | Markdown 미리보기 열기                    |
 | `Space mc`         | Markdown 미리보기 닫기                    |
+| Neo-tree `I`       | 선택한 폴더에 클립보드 이미지 저장        |
 | `Ctrl+s`           | 저장                                      |
 | `Space w`          | 저장                                      |
 | `Space q`          | 현재 창 닫기                              |
@@ -317,6 +321,52 @@ pcall(vim.treesitter.stop, args.buf)
 
 이 때문에 `:Lazy`에서 `markdown-preview.nvim`에 local changes가 있다고 보일 수 있습니다.
 업데이트로 패치가 사라지면 `/1` 새로고침 404 문제가 다시 생길 수 있습니다.
+
+## 클립보드 이미지 붙여넣기
+
+macOS 클립보드에 이미지가 있을 때 파일 탐색기에서 저장할 폴더를 선택하고 PNG 파일로 저장할 수 있습니다.
+
+필요 도구:
+
+```sh
+brew install pngpaste
+```
+
+사용 방법:
+
+| 상황 | 방법 |
+| --- | --- |
+| Neo-tree에서 폴더 선택 후 저장 | `I` |
+| 우클릭 메뉴로 저장 | `클립보드 이미지 저장` |
+| 명령으로 저장 | `:PasteClipboardImage` |
+| 특정 폴더에 저장 | `:PasteClipboardImage ~/Pictures` |
+
+동작 방식:
+
+- 폴더를 선택하면 그 폴더 안에 저장합니다.
+- 파일을 선택하면 그 파일이 있는 폴더에 저장합니다.
+- 파일명은 기본으로 `image-YYYYMMDD-HHMMSS.png`가 제안됩니다.
+- 클립보드에 이미지가 없으면 저장하지 않고 안내 메시지를 표시합니다.
+
+## TODO
+
+향후 cmux 연동으로 더 편하게 여는 흐름을 만들 계획입니다.
+
+목표:
+
+1. `baryonlabs/cmux`를 클론합니다.
+2. cmux UI에 `nvim` 아이콘 버튼을 둡니다.
+3. 버튼을 누르면 터미널에서 마지막으로 접근했던 폴더를 감지합니다.
+4. 그 폴더를 작업 디렉터리로 해서 `nvim`을 바로 실행합니다.
+5. 실행 직후 시작 상태 창에서 해당 폴더와 Git status를 보여줍니다.
+
+예상 동작:
+
+```text
+터미널에서 ~/dev/project-a 작업
+cmux의 nvim 아이콘 클릭
+~/dev/project-a 에서 nvim 자동 실행
+```
 
 ## 한글 사용자 설정
 

@@ -82,6 +82,52 @@ function _G.toggle_file_explorer()
   end
 end
 
+local function paste_clipboard_image(target_dir)
+  if vim.fn.executable("pngpaste") ~= 1 then
+    vim.notify("클립보드 이미지 붙여넣기는 pngpaste가 필요합니다: brew install pngpaste", vim.log.levels.WARN)
+    return
+  end
+
+  target_dir = target_dir and vim.fn.fnamemodify(target_dir, ":p") or vim.fn.getcwd()
+  if vim.fn.isdirectory(target_dir) ~= 1 then
+    target_dir = vim.fn.fnamemodify(target_dir, ":h")
+  end
+
+  local default_name = "image-" .. os.date("%Y%m%d-%H%M%S") .. ".png"
+  vim.ui.input({ prompt = "이미지 파일명: ", default = default_name }, function(input)
+    if not input or input == "" then
+      return
+    end
+
+    local filename = input:match("%.png$") and input or (input .. ".png")
+    local output = vim.fs.joinpath(target_dir, filename)
+    vim.fn.system({ "pngpaste", output })
+
+    if vim.v.shell_error ~= 0 then
+      vim.notify("클립보드에 PNG 이미지가 없거나 저장에 실패했습니다.", vim.log.levels.ERROR)
+      return
+    end
+
+    vim.notify("이미지 저장: " .. output, vim.log.levels.INFO)
+    pcall(vim.cmd, "Neotree refresh")
+  end)
+end
+
+local function get_selected_file_explorer_path()
+  if vim.bo.filetype ~= "neo-tree" then
+    return nil
+  end
+
+  local ok, manager = pcall(require, "neo-tree.sources.manager")
+  if not ok then
+    return nil
+  end
+
+  local state = manager.get_state_for_window()
+  local node = state and state.tree and state.tree:get_node()
+  return node and node.path or nil
+end
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.uv.fs_stat(lazypath) then
@@ -198,6 +244,12 @@ require("lazy").setup({
           hide_dotfiles = false,
           hide_gitignored = false,
         },
+        commands = {
+          paste_clipboard_image = function(state)
+            local node = state.tree and state.tree:get_node()
+            paste_clipboard_image(node and node.path or vim.fn.getcwd())
+          end,
+        },
       },
       window = {
         width = 32,
@@ -205,6 +257,7 @@ require("lazy").setup({
           ["<C-b>"] = function()
             _G.toggle_file_explorer()
           end,
+          ["I"] = "paste_clipboard_image",
         },
       },
     },
@@ -494,6 +547,9 @@ vim.api.nvim_create_user_command("Folder", open_file_explorer, { nargs = "?", co
 vim.api.nvim_create_user_command("Tree", open_file_explorer, { nargs = "?", complete = "dir", desc = "파일 탐색기 열기" })
 vim.api.nvim_create_user_command("Files", open_file_explorer, { nargs = "?", complete = "dir", desc = "파일 탐색기 열기" })
 vim.api.nvim_create_user_command("Dir", open_file_explorer, { nargs = "?", complete = "dir", desc = "파일 탐색기 열기" })
+vim.api.nvim_create_user_command("PasteClipboardImage", function(opts)
+  paste_clipboard_image(opts.args ~= "" and opts.args or get_selected_file_explorer_path() or vim.fn.getcwd())
+end, { nargs = "?", complete = "dir", desc = "클립보드 이미지를 PNG 파일로 저장" })
 
 local korean_command_aliases = {
   ["ㅂ"] = "q",
@@ -785,6 +841,8 @@ vim.cmd([[silent! aunmenu PopUp.상황별\ 팁<Tab>Space\ t]])
 vim.cmd([[anoremenu <silent> 499.10 PopUp.상황별\ 팁<Tab>Space\ t :NvimTipsKo<CR>]])
 vim.cmd([[silent! aunmenu PopUp.Markdown\ 미리보기<Tab>Space\ mp]])
 vim.cmd([[anoremenu <silent> 499.20 PopUp.Markdown\ 미리보기<Tab>Space\ mp :MarkdownPreviewToggle<CR>]])
+vim.cmd([[silent! aunmenu PopUp.클립보드\ 이미지\ 저장<Tab>I]])
+vim.cmd([[anoremenu <silent> 499.30 PopUp.클립보드\ 이미지\ 저장<Tab>I :PasteClipboardImage<CR>]])
 
 local last_tip_hover = 0
 vim.keymap.set("n", "<MouseMove>", function()
