@@ -1,8 +1,64 @@
-# cmux 파일 편집/관리를 위한 Neovim 설정 안내
+<h1 align="center">cmux Neovim 파일 편집/관리 세팅</h1>
+<p align="center">VSCode 사용자와 한글 사용자를 위한 cmux 친화 Neovim 설정</p>
+
+<p align="center">
+  한국어 | <a href="README.en.md">English</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
+  <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
+  <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+</p>
+
+<p align="center">
+  <img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview and Neo-tree file explorer" width="900" />
+</p>
 
 cmux를 사용할 때 파일 편집과 관리를 한 번에 처리하기 위한 Neovim 도구 세팅입니다.
 VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성했습니다.
 파일 탐색, 빠른 파일 찾기, 프로젝트 검색, 자동완성, LSP, 포맷, Git 변경 표시, 한글 사용자 보완을 포함합니다.
+
+## 기능 한눈에 보기
+
+<table>
+<tr>
+<td width="40%" valign="middle">
+<h3>VSCode식 파일 탐색</h3>
+<code>Ctrl+b</code>로 Neo-tree 파일 탐색기를 열고 닫습니다. 탐색기 안에서도 같은 키로 닫힙니다.
+</td>
+<td width="60%">
+<img src="screenshots/file-explorer.svg" alt="Neo-tree file explorer" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>Markdown 미리보기</h3>
+<code>Space mp</code> 또는 우클릭 메뉴로 브라우저 preview를 열고, 포트는 <code>8755</code>로 고정합니다.
+</td>
+<td width="60%">
+<img src="screenshots/preview-and-file-explorer.png" alt="Markdown preview" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>마우스 친화 TIP</h3>
+상태바 <code>TIP</code>을 클릭하거나 hover해서 상황별 사용 팁을 열 수 있습니다.
+</td>
+<td width="60%">
+<img src="screenshots/tips-window.svg" alt="TIP window" width="100%" />
+</td>
+</tr>
+<tr>
+<td width="40%" valign="middle">
+<h3>명령 팔레트</h3>
+VSCode Command Palette처럼 <code>Space p</code>로 Neovim 명령을 검색하고 실행합니다.
+</td>
+<td width="60%">
+<img src="screenshots/command-palette.svg" alt="Command palette" width="100%" />
+</td>
+</tr>
+</table>
 
 ## 특히 강조한 점
 
@@ -16,6 +72,26 @@ VSCode를 쓰던 사람이 Neovim에 적응하기 쉽도록 구성했습니다.
 | 명령 팔레트 | VSCode Command Palette처럼 `Space p`로 명령을 검색해서 실행합니다. |
 | Markdown 미리보기 | `Space mp` 또는 우클릭 메뉴 `Markdown 미리보기`로 브라우저 preview를 열고 닫습니다. |
 | 클립보드 이미지 저장 | 파일 탐색기에서 폴더를 고른 뒤 `I` 또는 우클릭 메뉴로 이미지를 PNG로 저장합니다. |
+
+## 다국어 README
+
+현재 지원:
+
+| 언어 | 문서 |
+| --- | --- |
+| 한국어 | `README.md` |
+| English | `README.en.md` |
+
+추가 예정:
+
+```text
+README.ja.md
+README.zh-CN.md
+README.zh-TW.md
+README.vi.md
+```
+
+번역 기준은 cmux README처럼 상단 언어 링크를 유지하고, 스크린샷/설치 명령/핵심 단축키는 모든 언어에서 같은 구조로 맞추는 것입니다.
 
 ## 구성 파일
 
