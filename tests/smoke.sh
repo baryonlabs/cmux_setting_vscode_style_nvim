@@ -45,6 +45,7 @@ require_file LICENSE
 require_file NVIM_CORE_SETTINGS.md
 require_file INSTALL_WITH_LLM.md
 require_file INSTALL_WITH_MCP.md
+require_file docs/AGENTIXWORK_INTEGRATION.md
 require_file docs/ZSH_SETTINGS.md
 require_file init.lua
 require_file docs/zshrc.cmux
@@ -80,6 +81,7 @@ require_text README.ko.md "docs/ZSH_SETTINGS.md"
 require_text NVIM_CORE_SETTINGS.md 'Git 상태는 `BufWritePost`, `FocusGained`, `FileChangedShellPost`에서 다시 계산합니다.'
 require_text INSTALL_WITH_LLM.md "가장 쉬운 요청"
 require_text INSTALL_WITH_MCP.md "가장 쉬운 요청"
+require_text docs/AGENTIXWORK_INTEGRATION.md "AgentixWork Terminal"
 require_text docs/ZSH_SETTINGS.md "zsh-history-substring-search"
 require_text docs/zshrc.cmux "history-substring-search-up"
 

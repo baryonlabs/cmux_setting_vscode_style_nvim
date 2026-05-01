@@ -132,6 +132,7 @@ nvim
 | `NVIM_CORE_SETTINGS.md` | 핵심 설정값 요약                                 |
 | `INSTALL_WITH_LLM.md`   | LLM에게 설치를 맡길 때 쓰는 프롬프트와 검증 절차 |
 | `INSTALL_WITH_MCP.md`   | MCP 파일 시스템 도구로 설치할 때 쓰는 작업 절차  |
+| `docs/AGENTIXWORK_INTEGRATION.md` | AgentixWork Terminal의 `Nvim` 버튼 연동 계약 |
 | `docs/ZSH_SETTINGS.md`  | zsh 히스토리 검색, `Ctrl+s`, Claude/Codex 터미널 사용 보조 |
 
 ## 핵심 설정값 요약
