@@ -712,6 +712,25 @@ Markdown 파일을 열자마자 preview는 자동으로 뜨지 않습니다. 편
 아래 기능은 이 Neovim 설정과 함께 쓰기 좋은 cmux 쪽 선택 워크플로우입니다.
 Neovim 안에서 모두 해결하기보다 cmux, 셸 스크립트, 워크스페이스 설정으로 처리하는 편이 자연스러운 기능을 정리했습니다.
 
+시각 예시는 cmux 원본 README의 공식 이미지를 사용했습니다.
+
+<table>
+<tr>
+<td width="33%" valign="top">
+<strong>워크스페이스와 분할 화면</strong><br />
+<img src="https://github.com/manaflow-ai/cmux/raw/main/docs/assets/vertical-horizontal-tabs-and-splits.png" alt="cmux vertical tabs and split panes" width="100%" />
+</td>
+<td width="33%" valign="top">
+<strong>완료 알림과 사이드바 배지</strong><br />
+<img src="https://github.com/manaflow-ai/cmux/raw/main/docs/assets/sidebar-notification-badge.png" alt="cmux sidebar notification badge" width="100%" />
+</td>
+<td width="33%" valign="top">
+<strong>내장 브라우저 패널</strong><br />
+<img src="https://github.com/manaflow-ai/cmux/raw/main/docs/assets/built-in-browser.png" alt="cmux built-in browser" width="100%" />
+</td>
+</tr>
+</table>
+
 | 기능 | 사용법 | 출처 |
 | --- | --- | --- |
 | live reload가 되는 cmux Markdown viewer | `~/.config/cmux/cmux.json`에서 `app.openMarkdownInCmuxViewer`를 켭니다. `.md`, `.markdown`, `.mkd`, `.mdx` 파일을 Cmd-click하면 선호 에디터 대신 cmux markdown viewer 패널에서 열립니다. | [cmux Configuration](https://cmux.com/docs/configuration) |
