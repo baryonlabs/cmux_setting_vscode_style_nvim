@@ -134,3 +134,18 @@ tests/smoke.sh
 ```
 
 The smoke test checks core files, Neovim config loading, key mappings, custom commands, popup menu entries, Markdown preview settings, and startup status refresh.
+
+## cmux Extension and Workflow Notes
+
+These are optional cmux-side workflows that can complement this Neovim setup. They are useful when a feature is better handled by cmux, shell scripts, or workspace configuration than by Neovim itself.
+
+| Feature | How to use it | Source |
+| --- | --- | --- |
+| cmux Markdown viewer with live reload | Enable `app.openMarkdownInCmuxViewer` in `~/.config/cmux/cmux.json`. Cmd-clicking `.md`, `.markdown`, `.mkd`, or `.mdx` files opens them in the cmux markdown viewer panel instead of the preferred editor. | [cmux Configuration](https://cmux.com/docs/configuration) |
+| Neovim Markdown preview in a stable browser pane | This Neovim setup keeps `markdown-preview.nvim` on port `8755`. Open or split a cmux browser pane to `http://localhost:8755` after starting preview with `Space mp`. | [cmux Browser Automation](https://cmux.com/docs/browser-automation), [NVIM_CORE_SETTINGS.md](NVIM_CORE_SETTINGS.md) |
+| Workspace and folder restore | cmux restores window, workspace, pane layout, working directories, terminal scrollback on a best-effort basis, and browser URL/history after relaunch. It does not restore live processes such as `nvim`, `tmux`, Claude Code, or Codex. | [cmux Getting Started](https://cmux.com/docs/getting-started) |
+| Project-specific workspace layout | Add `.cmux/cmux.json` to a project and define a `commands[].workspace` with `cwd`, layout, terminal surfaces, browser surfaces, and startup commands. Use this for repeatable editor + preview + agent layouts. | [cmux Custom Commands](https://cmux.com/docs/custom-commands) |
+| Sidebar build or agent status | Use `cmux set-status`, `cmux set-progress`, `cmux log`, and matching clear commands from build scripts or agent hooks to show state in the sidebar. | [cmux API Reference](https://cmux.com/docs/api) |
+| Completion notifications | Run `cmux notify --title "Task Complete" --body "..."` from shell scripts, CI helpers, or agent hooks. cmux also supports OSC 777 and OSC 99 terminal notifications. | [cmux Notifications](https://cmux.com/docs/notifications) |
+| Browser interaction from scripts | Use `cmux browser open`, `open-split`, `snapshot`, `screenshot`, `click`, `fill`, `wait`, `console`, and `errors` to inspect or drive the embedded browser from a terminal. | [cmux Browser Automation](https://cmux.com/docs/browser-automation) |
+| External CLI access | Inside cmux terminals the CLI works automatically. For external terminals, create a symlink to `/Applications/cmux.app/Contents/Resources/bin/cmux` so scripts outside cmux can call `cmux list-workspaces`, `cmux notify`, and other commands. | [cmux Getting Started](https://cmux.com/docs/getting-started) |
