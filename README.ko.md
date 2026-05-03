@@ -706,3 +706,19 @@ Markdown 파일을 열자마자 preview는 자동으로 뜨지 않습니다. 편
 | 설정을 새로 적용하고 싶음     | Neovim 완전 종료 후 다시 실행                           |
 
 설정을 많이 바꾼 직후에는 `:source`보다 `:qa`로 완전히 종료하고 다시 여는 편이 안정적입니다.
+
+## cmux 확장 및 워크플로우 메모
+
+아래 기능은 이 Neovim 설정과 함께 쓰기 좋은 cmux 쪽 선택 워크플로우입니다.
+Neovim 안에서 모두 해결하기보다 cmux, 셸 스크립트, 워크스페이스 설정으로 처리하는 편이 자연스러운 기능을 정리했습니다.
+
+| 기능 | 사용법 | 출처 |
+| --- | --- | --- |
+| live reload가 되는 cmux Markdown viewer | `~/.config/cmux/cmux.json`에서 `app.openMarkdownInCmuxViewer`를 켭니다. `.md`, `.markdown`, `.mkd`, `.mdx` 파일을 Cmd-click하면 선호 에디터 대신 cmux markdown viewer 패널에서 열립니다. | [cmux Configuration](https://cmux.com/docs/configuration) |
+| 안정적인 브라우저 패널에서 Neovim Markdown preview 보기 | 이 Neovim 설정은 `markdown-preview.nvim` 포트를 `8755`로 고정합니다. `Space mp`로 preview를 켠 뒤 cmux browser 패널이나 split을 `http://localhost:8755`로 열어 둡니다. | [cmux Browser Automation](https://cmux.com/docs/browser-automation), [NVIM_CORE_SETTINGS.md](NVIM_CORE_SETTINGS.md) |
+| 워크스페이스와 폴더 복구 | cmux는 재실행 뒤 window, workspace, pane layout, working directory, terminal scrollback 일부, browser URL/history를 복구합니다. 단, `nvim`, `tmux`, Claude Code, Codex 같은 실행 중 프로세스 상태는 복구하지 않습니다. | [cmux Getting Started](https://cmux.com/docs/getting-started) |
+| 프로젝트별 워크스페이스 레이아웃 | 프로젝트에 `.cmux/cmux.json`을 두고 `commands[].workspace`에 `cwd`, layout, terminal surface, browser surface, 시작 명령을 정의합니다. 에디터 + preview + agent 조합을 반복해서 열 때 유용합니다. | [cmux Custom Commands](https://cmux.com/docs/custom-commands) |
+| 사이드바 빌드/agent 상태 표시 | 빌드 스크립트나 agent hook에서 `cmux set-status`, `cmux set-progress`, `cmux log`와 clear 명령을 사용해 sidebar에 상태를 표시합니다. | [cmux API Reference](https://cmux.com/docs/api) |
+| 완료 알림 | 셸 스크립트, CI helper, agent hook에서 `cmux notify --title "Task Complete" --body "..."`를 실행합니다. cmux는 OSC 777과 OSC 99 터미널 알림도 지원합니다. | [cmux Notifications](https://cmux.com/docs/notifications) |
+| 스크립트에서 브라우저 조작 | `cmux browser open`, `open-split`, `snapshot`, `screenshot`, `click`, `fill`, `wait`, `console`, `errors`로 내장 브라우저를 터미널에서 확인하거나 조작합니다. | [cmux Browser Automation](https://cmux.com/docs/browser-automation) |
+| 외부 터미널에서 cmux CLI 사용 | cmux 내부 터미널에서는 CLI가 자동으로 동작합니다. 외부 터미널에서는 `/Applications/cmux.app/Contents/Resources/bin/cmux`에 symlink를 만들면 `cmux list-workspaces`, `cmux notify` 같은 명령을 스크립트에서 호출할 수 있습니다. | [cmux Getting Started](https://cmux.com/docs/getting-started) |
