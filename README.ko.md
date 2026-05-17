@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+  <img src="https://img.shields.io/badge/Windows-ready-0078D6?logo=windows" alt="Windows ready" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
@@ -112,6 +113,47 @@ nvim
 mkdir -p ~/.config/nvim
 cp init.lua ~/.config/nvim/init.lua
 nvim
+```
+
+## Windows PowerShell 설치
+
+필수 도구 (winget으로 설치):
+
+```powershell
+winget install Neovim.Neovim
+winget install Git.Git
+winget install OpenJS.NodeJS.LTS
+winget install BurntSushi.ripgrep.MSVC
+winget install sharkdp.fd
+```
+
+설치:
+
+```powershell
+git clone https://github.com/baryonlabs/cmux_setting_vscode_style_nvim.git
+cd cmux_setting_vscode_style_nvim
+
+$nvim = "$env:LOCALAPPDATA\nvim"
+New-Item -ItemType Directory -Force $nvim | Out-Null
+
+Copy-Item .\init.lua "$nvim\cmux-base.lua" -Force
+Copy-Item .\init.ko.lua "$nvim\init.lua" -Force
+
+nvim
+```
+
+Windows에서 Neovim 설정 경로: `%LOCALAPPDATA%\nvim\init.lua`
+
+테스트:
+
+```bash
+tests/smoke.sh
+```
+
+Windows에서는 PowerShell 테스트를 실행합니다:
+
+```powershell
+tests/smoke.ps1
 ```
 
 ## 구성 파일

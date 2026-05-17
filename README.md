@@ -9,6 +9,7 @@
   <a href="https://github.com/baryonlabs/cmux_setting_vscode_style_nvim"><img src="https://img.shields.io/badge/GitHub-baryonlabs%2Fcmux__setting__vscode__style__nvim-555?logo=github" alt="GitHub repository" /></a>
   <img src="https://img.shields.io/badge/Neovim-0.12+-57A143?logo=neovim&logoColor=white" alt="Neovim 0.12+" />
   <img src="https://img.shields.io/badge/macOS-ready-000?logo=apple" alt="macOS ready" />
+   <img src="https://img.shields.io/badge/Windows-ready-0078D6?logo=windows" alt="Windows ready" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
 </p>
 
@@ -63,6 +64,35 @@ Optional macOS tools:
 ```bash
 brew install macism
 ```
+
+## Windows PowerShell Install
+
+Prerequisites (install via winget):
+
+```powershell
+winget install Neovim.Neovim
+winget install Git.Git
+winget install OpenJS.NodeJS.LTS
+winget install BurntSushi.ripgrep.MSVC
+winget install sharkdp.fd
+```
+
+Install:
+
+```powershell
+git clone https://github.com/baryonlabs/cmux_setting_vscode_style_nvim.git
+cd cmux_setting_vscode_style_nvim
+
+$nvim = "$env:LOCALAPPDATA\nvim"
+New-Item -ItemType Directory -Force $nvim | Out-Null
+
+Copy-Item .\init.lua "$nvim\cmux-base.lua" -Force
+Copy-Item .\init.ko.lua "$nvim\init.lua" -Force
+
+nvim
+```
+
+Neovim config path on Windows: `%LOCALAPPDATA%\nvim\init.lua`
 
 Optional zsh helpers are documented separately in [docs/ZSH_SETTINGS.md](docs/ZSH_SETTINGS.md).
 
@@ -131,6 +161,12 @@ If `macism` or `im-select` is installed, the setup can switch back to the Englis
 
 ```bash
 tests/smoke.sh
+```
+
+On Windows, run the PowerShell test:
+
+```powershell
+tests/smoke.ps1
 ```
 
 The smoke test checks core files, Neovim config loading, key mappings, custom commands, popup menu entries, Markdown preview settings, and startup status refresh.
